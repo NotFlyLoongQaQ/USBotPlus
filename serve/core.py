@@ -11,6 +11,12 @@ from threading import Thread
 names = []
 threads = []
 proxies = []
+
+cname = ''
+with open('server.txt','r') as f:
+    cname = f.read()
+
+
 def sendd(text):
     return json.dumps({"cmd":"chat","text":str(text)})
 
@@ -29,7 +35,7 @@ class main:
                     try:
                         rand = random.randint(3,20)
                         uid = str(uuid.uuid4()).replace('-', '')[0:rand]
-                        check_lock_msg = json.loads(check_lockroom('your-channel',uid,uid))
+                        check_lock_msg = json.loads(check_lockroom(cname,uid,uid))
                         
                         if (check_lock_msg['cmd'] == 'onlineSet'):
                             break
@@ -39,7 +45,7 @@ class main:
                 ws.send(sendd('不要尝试踢USBot，除非你锁房，否则他们还会回来的。不过需要注意的是，只要你一解锁房间，他们也会第一时间回来的。祝你有个美好的一天！（小提示：快去叫管理来这里开验证码吧，我需要一些验证码来训练模型）'))
                 rand = random.randint(3,20)
                 uid = str(uuid.uuid4()).replace('-', '')[0:rand]
-                new_thread = Thread(target=run,args=('your-channel',uid,uid,proxies[random.randint(0,len(proxies)-1)]))
+                new_thread = Thread(target=run,args=(cname,uid,uid,proxies[random.randint(0,len(proxies)-1)]))
                 threads.append(new_thread)
                 print(threads[-1])
                 threads[-1].start()
@@ -84,7 +90,7 @@ if __name__ == "__main__":
         try:
             rand = random.randint(3,20)
             uid = str(uuid.uuid4()).replace('-', '')[0:rand]
-            check_lock_msg = json.loads(check_lockroom('your-channel',uid,uid))
+            check_lock_msg = json.loads(check_lockroom(cname,uid,uid))
             if (check_lock_msg['cmd'] == 'onlineSet'):
                 break
         except:
@@ -97,7 +103,7 @@ if __name__ == "__main__":
     for l in proxies:
         rand = random.randint(3,20)
         uid = str(uuid.uuid4()).replace('-', '')[0:rand]
-        threads.append(Thread(target=run,args=('your-channel',uid,uid,proxies[random.randint(0,len(proxies)-1)])))
+        threads.append(Thread(target=run,args=(cname,uid,uid,proxies[random.randint(0,len(proxies)-1)])))
     print(threads)
     for l in threads:
         l.start()
