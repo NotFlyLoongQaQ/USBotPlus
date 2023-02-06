@@ -1,4 +1,4 @@
-# Dark-Forest At Hackchat 黑暗森林在HackChat
+# USBot++ You SB(Bitch) Bot
 
 [![](https://img.shields.io/badge/Python-3.4.4+-red.svg)]() [![](https://img.shields.io/badge/Python-Flask-blue.svg)]() [![](https://img.shields.io/badge/Bomb-USBot-blue.svg)]()
 该Readme将会最详细的讲解该项目的安装方法.
@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
 
 
-# Dark-Forest At Hackchat. # Dark-forest at HackChat
+# USBot++ You SB(Bitch) Bot
 
 [![](https://img.shields.io/badge/Python-3.4.4+-red.svg)]()[![](https://img.shields.io/badge/Python-Flask-blue.svg)]()[![](https://img.shields.io/badge/Bomb-USBot-blue.svg)]()
 This Readme will explain how to install the project in the most detail.
