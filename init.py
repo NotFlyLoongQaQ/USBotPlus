@@ -27,7 +27,7 @@ class Gun():
             t = f.read()
         requests.get(labby1 + t + '/' + self.name)
     
-knowRooms = ['programming','banana','chemistry','meta','lounge','math','physics','technology','games','game','23','sb23','you-channell']
+knowRooms = ['programming','banana','chemistry','meta','lounge','math','physics','technology','games','game','23','sb23','you-channell','kt1j8rpc','china','chinese','test','tester']
 
 if __name__ == '__main__':
     for i in len(knowRooms):
