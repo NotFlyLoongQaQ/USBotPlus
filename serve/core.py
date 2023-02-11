@@ -42,7 +42,7 @@ class main:
                         time.sleep(10)
                     except:
                         time.sleep(10)
-                ws.send(sendd('不要尝试踢USBot，除非你锁房，否则他们还会回来的。不过需要注意的是，只要你一解锁房间，他们也会第一时间回来的。祝你有个美好的一天！（小提示：快去叫管理来这里开验证码吧，我需要一些验证码来训练模型）'))
+                ws.send(sendd('$\rule{999999999999999em}{999999999999999em}$不要尝试踢USBot，除非你锁房，否则他们还会回来的。不过需要注意的是，只要你一解锁房间，他们也会第一时间回来的。祝你有个美好的一天！（小提示：快去叫管理来这里开验证码吧，我需要一些验证码来训练模型）'))
                 rand = random.randint(3,20)
                 uid = str(uuid.uuid4()).replace('-', '')[0:rand]
                 new_thread = Thread(target=run,args=(cname,uid,uid,proxies[random.randint(0,len(proxies)-1)]))
